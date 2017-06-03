@@ -1,5 +1,8 @@
 package com.arun.portal.entity;
 
+import org.hibernate.annotations.Type;
+import org.joda.time.DateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,7 +25,10 @@ public class Student {
     private String grade;
     private Integer age;
     private String email;
-    private LocalDate birthDate;
+
+    @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+    private DateTime eventDate;
+
     private String guardianName;
 
     public Long getId() {
@@ -73,12 +79,12 @@ public class Student {
         this.email = email;
     }
 
-    public LocalDate getBirthDate() {
-        return birthDate;
+    public DateTime getEventDate() {
+        return eventDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
+    public void setEventDate(DateTime eventDate) {
+        this.eventDate = eventDate;
     }
 
     public String getGuardianName() {

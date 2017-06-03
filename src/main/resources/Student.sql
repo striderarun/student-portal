@@ -10,3 +10,5 @@ AGE INTEGER,
 BIRTH_DATE TIMESTAMP(6),
 PRIMARY KEY (ID)
 );
+
+insert into Student values(1, 'Arun', 'Mohan', '10', 'arunmohan@gmail.com','ajay','16','1990-01-27 00:00:00');
