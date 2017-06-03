@@ -3,6 +3,16 @@ schema {
 }
 
 type QueryType {
-
+    student(id : Int) : Student
+    students : [Student]
 }
 
+type Student {
+    id : Int
+    firstName : String
+    lastName : String
+    grade : String
+    age : Int
+    email : String
+    guardianName : String
+}

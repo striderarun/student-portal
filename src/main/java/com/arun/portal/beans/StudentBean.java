@@ -4,19 +4,20 @@ import java.time.LocalDate;
 
 public class StudentBean {
 
-    private String id;
+    private Long id;
     private String firstName;
     private String lastName;
+    private String grade;
     private Integer age;
     private String email;
     private LocalDate birthDate;
     private String guardianName;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -34,6 +35,14 @@ public class StudentBean {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
     }
 
     public Integer getAge() {
