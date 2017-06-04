@@ -1,0 +1,21 @@
+#Add Student
+mutation {
+	addStudent (student : {
+		firstName : "George",
+    	lastName : "Martin",
+    	grade : "12",
+    	age : 18,
+    	email : "strider90arun@gmail.com",
+    	guardianName : "Elendil"
+	})
+}
+
+#Fetch All Student REST
+{
+  "query":
+  "{
+    students {
+        lastName
+    }
+   }"
+}
