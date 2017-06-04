@@ -9,4 +9,6 @@ public interface StudentService {
     List<Student> getAllStudents();
 
     List<Student> getStudentsByFirstName(String firstName);
+
+    void addStudent(Student student);
 }

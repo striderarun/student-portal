@@ -1,10 +1,15 @@
 schema {
     query: QueryType
+    mutation: MutationType
 }
 
 type QueryType {
     student(id : Int) : Student
     students : [Student]
+}
+
+type MutationType {
+    addStudent(student: StudentInput): MutationResult
 }
 
 type Student {
@@ -15,4 +20,17 @@ type Student {
     age : Int
     email : String
     guardianName : String
+}
+
+input StudentInput {
+    firstName: String
+    lastName: String
+    grade : String
+    age : Int
+    email : String
+    guardianName : String
+}
+
+type MutationResult {
+   success: Boolean
 }

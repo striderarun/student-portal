@@ -8,26 +8,14 @@ import graphql.schema.idl.RuntimeWiring;
 import graphql.schema.idl.SchemaGenerator;
 import graphql.schema.idl.SchemaParser;
 import graphql.schema.idl.TypeDefinitionRegistry;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
-
-
-import graphql.schema.DataFetcher;
-import graphql.schema.GraphQLSchema;
-import graphql.schema.idl.RuntimeWiring;
-import graphql.schema.idl.SchemaGenerator;
-import graphql.schema.idl.SchemaParser;
-import graphql.schema.idl.TypeDefinitionRegistry;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.stereotype.Service;
-
-import javax.annotation.PostConstruct;
-import java.util.List;
+import java.util.Map;
 
 @Service
 public class Schema {
@@ -61,12 +49,37 @@ public class Schema {
 
     DataFetcher<List<Student>> allStudents = environment -> studentService.getAllStudents();
 
+    DataFetcher<MutationResult> addStudent = environment -> {
+        Map<String, Object> argsMap = environment.getArgument("student");
+        Student student = createStudentEntity(argsMap);
+        studentService.addStudent(student);
+        return new MutationResult();
+    };
+
     private RuntimeWiring buildRuntimeWiring() {
         return RuntimeWiring.newRuntimeWiring()
                 .type("QueryType", typeWiring -> typeWiring
                         .dataFetcher("student", studentByName)
                         .dataFetcher("students", allStudents)
+                ).type("MutationType", typeWiring -> typeWiring
+                        .dataFetcher("addStudent", addStudent)
                 ).build();
+    }
+
+    public static class MutationResult {
+        public boolean success = true;
+    }
+
+    private Student createStudentEntity(Map<String, Object> argsMap) {
+        Student student = new Student();
+        student.setFirstName((String)argsMap.get("firstName"));
+        student.setLastName((String)argsMap.get("lastName"));
+        student.setAge((Integer)argsMap.get("age"));
+        student.setEmail((String)argsMap.get("email"));
+        student.setGrade((String)argsMap.get("grade"));
+        student.setGuardianName((String)argsMap.get("guardianName"));
+        student.setBirthDate(new DateTime());
+        return student;
     }
 
 }

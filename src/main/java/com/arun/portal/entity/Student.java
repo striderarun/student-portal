@@ -27,7 +27,7 @@ public class Student {
     private String email;
 
     @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
-    private DateTime eventDate;
+    private DateTime birthDate;
 
     private String guardianName;
 
@@ -79,12 +79,12 @@ public class Student {
         this.email = email;
     }
 
-    public DateTime getEventDate() {
-        return eventDate;
+    public DateTime getBirthDate() {
+        return birthDate;
     }
 
-    public void setEventDate(DateTime eventDate) {
-        this.eventDate = eventDate;
+    public void setBirthDate(DateTime birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getGuardianName() {
