@@ -26,6 +26,11 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public List<Student> getStudentsByGrade(String grade) {
+        return studentRepository.findByGrade(grade);
+    }
+
+    @Override
     @Transactional
     public void addStudent(Student student) {
         studentRepository.save(student);

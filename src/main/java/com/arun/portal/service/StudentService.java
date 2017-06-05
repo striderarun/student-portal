@@ -10,5 +10,7 @@ public interface StudentService {
 
     List<Student> getStudentsByFirstName(String firstName);
 
+    List<Student> getStudentsByGrade(String grade);
+
     void addStudent(Student student);
 }

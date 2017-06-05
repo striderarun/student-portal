@@ -47,6 +47,9 @@ public class Schema {
     DataFetcher<List<Student>> studentByName = environment ->
             studentService.getStudentsByFirstName(environment.getArgument("name"));
 
+    DataFetcher<List<Student>> studentsByGrade = environment ->
+            studentService.getStudentsByGrade(environment.getArgument("grade"));
+
     DataFetcher<List<Student>> allStudents = environment -> studentService.getAllStudents();
 
     DataFetcher<MutationResult> addStudent = environment -> {
@@ -61,6 +64,7 @@ public class Schema {
                 .type("QueryType", typeWiring -> typeWiring
                         .dataFetcher("student", studentByName)
                         .dataFetcher("students", allStudents)
+                        .dataFetcher("grade", studentsByGrade)
                 ).type("MutationType", typeWiring -> typeWiring
                         .dataFetcher("addStudent", addStudent)
                 ).build();

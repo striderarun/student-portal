@@ -6,6 +6,7 @@ schema {
 type QueryType {
     student(id : Int) : Student
     students : [Student]
+    grade : [Student]
 }
 
 type MutationType {
