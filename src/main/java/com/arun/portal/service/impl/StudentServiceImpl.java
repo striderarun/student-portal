@@ -35,4 +35,9 @@ public class StudentServiceImpl implements StudentService {
     public void addStudent(Student student) {
         studentRepository.save(student);
     }
+
+    @Override
+    public Student getStudentDetails(String firstName, String lastName) {
+        return studentRepository.findByFirstNameAndLastName(firstName, lastName);
+    }
 }

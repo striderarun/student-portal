@@ -13,4 +13,6 @@ public interface StudentService {
     List<Student> getStudentsByGrade(String grade);
 
     void addStudent(Student student);
+
+    Student getStudentDetails(String firstName, String lastName);
 }
