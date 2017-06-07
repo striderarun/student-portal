@@ -30,6 +30,7 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile("org.hsqldb:hsqldb:2.2.8")
 	compile("joda-time:joda-time:2.9.9")
+	compile("com.google.code.gson:gson:2.8.1")
 	compile("org.jadira.usertype:usertype.core:5.0.0.GA")
 
 

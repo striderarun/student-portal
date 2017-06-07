@@ -15,4 +15,6 @@ public interface StudentService {
     void addStudent(Student student);
 
     Student getStudentDetails(String firstName, String lastName);
+
+    Student getStudentById(Integer id);
 }

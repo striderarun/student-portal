@@ -4,7 +4,9 @@ schema {
 }
 
 type QueryType {
+    prefect : Student
     student(id : Int) : Student
+    studentByName(name : String) : Student
     students : [Student]
     grade : [Student]
 }

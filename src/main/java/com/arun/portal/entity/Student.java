@@ -18,7 +18,7 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "STUDENT_SEQ")
-    private Long id;
+    private Integer id;
 
     private String firstName;
     private String lastName;
@@ -31,11 +31,11 @@ public class Student {
 
     private String guardianName;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

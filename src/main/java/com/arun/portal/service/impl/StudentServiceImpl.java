@@ -40,4 +40,10 @@ public class StudentServiceImpl implements StudentService {
     public Student getStudentDetails(String firstName, String lastName) {
         return studentRepository.findByFirstNameAndLastName(firstName, lastName);
     }
+
+    @Override
+    public Student getStudentById(Integer id) {
+        return studentRepository.findOne(id);
+    }
+
 }
