@@ -5,7 +5,7 @@ schema {
 
 type QueryType {
     prefect : Student
-    student(id : Int) : Student
+    student(id : String) : Student
     studentByName(name : String) : Student
     students : [Student]
     grade : [Student]
@@ -16,7 +16,7 @@ type MutationType {
 }
 
 type Student {
-    id : Int
+    id : String
     firstName : String
     lastName : String
     grade : String
