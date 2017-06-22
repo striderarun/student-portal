@@ -28,7 +28,7 @@
                   "name": "id",
                   "type": {
                     "kind": "SCALAR",
-                    "name": "Int"
+                    "name": "String"
                   }
                 }
               ],
@@ -91,7 +91,7 @@
               "args": [],
               "type": {
                 "kind": "SCALAR",
-                "name": "Int"
+                "name": "String"
               },
               "isDeprecated": false
             },
@@ -154,13 +154,13 @@
         },
         {
           "kind": "SCALAR",
-          "name": "Int",
-          "description": "Built-in Int"
+          "name": "String",
+          "description": "Built-in String"
         },
         {
           "kind": "SCALAR",
-          "name": "String",
-          "description": "Built-in String"
+          "name": "Int",
+          "description": "Built-in Int"
         },
         {
           "kind": "OBJECT",
@@ -304,7 +304,7 @@
             },
             {
               "name": "directives",
-              "description": "\u0027A list of all directives supported by this server.",
+              "description": "'A list of all directives supported by this server.",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -323,7 +323,7 @@
             },
             {
               "name": "subscriptionType",
-              "description": "\u0027If this server support subscription, the type that subscription operations will be rooted at.",
+              "description": "'If this server support subscription, the type that subscription operations will be rooted at.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -816,7 +816,7 @@
         },
         {
           "name": "skip",
-          "description": "Directs the executor to skip this field or fragment when the `if`\u0027argument is true.",
+          "description": "Directs the executor to skip this field or fragment when the `if`'argument is true.",
           "args": [
             {
               "name": "if",

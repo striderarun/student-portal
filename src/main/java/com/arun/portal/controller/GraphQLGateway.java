@@ -62,8 +62,8 @@ public class GraphQLGateway {
     }
 
     @RequestMapping(value = "/export", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public void exportSchema() {
-        schema.exportSchema();
+    public String exportSchema() {
+        return schema.exportSchema();
     }
 
 }

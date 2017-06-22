@@ -188,13 +188,14 @@ public class Schema {
 
 
 
-    public void exportSchema() {
+    public String exportSchema() {
         Map<String, Object> result = exec(query, Collections.emptyMap());
         Map<String,Object> ut = new HashMap<>();
         ut.put("data", result);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String out = gson.toJson(ut);
         System.out.println(out);
+        return out;
     }
 
 }
