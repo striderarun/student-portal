@@ -32,7 +32,7 @@ var compiler = webpack({
 });
 var app = new WebpackDevServer(compiler, {
   contentBase: '/public/',
-  proxy: {'/graphql': `http://localhost:${GRAPHQL_PORT}`},
+  proxy: {'/graphql': `http://localhost:${GRAPHQL_PORT}/services/student`},
   publicPath: '/js/',
   stats: {colors: true}
 });
