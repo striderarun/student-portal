@@ -8,6 +8,8 @@ public interface StudentService {
 
     List<Student> getAllStudents();
 
+    List<Student> getAllStudentsByIds(List<Integer> ids);
+
     List<Student> getStudentsByFirstName(String firstName);
 
     List<Student> getStudentsByGrade(String grade);

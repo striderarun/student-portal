@@ -21,6 +21,11 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public List<Student> getAllStudentsByIds(List<Integer> ids) {
+        return studentRepository.findByIdIn(ids);
+    }
+
+    @Override
     public List<Student> getStudentsByFirstName(String firstName) {
         return studentRepository.findByFirstName(firstName);
     }
