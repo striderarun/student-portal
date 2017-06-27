@@ -22,6 +22,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class Schema {
@@ -63,7 +64,11 @@ public class Schema {
     DataFetcher<List<Student>> studentsByGrade = environment ->
             studentService.getStudentsByGrade(environment.getArgument("grade"));
 
-    DataFetcher<List<Student>> allStudents = environment -> studentService.getAllStudents();
+    DataFetcher<List<Student>> allStudents = environment -> {
+        List<String> ids = environment.getArgument("ids");
+        List<Integer> intIds = ids.stream().map(s -> Integer.valueOf(s)).collect(Collectors.toList());
+        return studentService.getAllStudentsByIds(intIds);
+    };
 
     DataFetcher<MutationResult> addStudent = environment -> {
         Map<String, Object> argsMap = environment.getArgument("student");

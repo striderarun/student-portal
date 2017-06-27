@@ -7,7 +7,7 @@ type QueryType {
     prefect : Student
     student(id : String) : Student
     studentByName(name : String) : Student
-    students : [Student]
+    students(ids : [String]) : [Student]
     grade : [Student]
 }
 

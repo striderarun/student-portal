@@ -44,7 +44,6 @@ public class GraphQLGateway {
     }
 
     @RequestMapping(value = "/graphql", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
     public Object executeOperation(@RequestBody Map body) {
         String query = (String) body.get("query");
         Map<String, Object> variables = (Map<String, Object>) body.get("variables");
