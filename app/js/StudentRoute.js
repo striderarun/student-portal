@@ -1,10 +1,10 @@
 export default class extends Relay.Route {
   static path = '/';
   static queries = {
-    prefect: (Component) => Relay.QL`
-        query RootQuery {
-           prefect {
-              ${Component.getFragment('prefect')},
+    students: (Component) => Relay.QL`
+        query QueryType {
+           students(ids:["1","2"]) {
+              ${Component.getFragment('students')},
            },
         }
     `,

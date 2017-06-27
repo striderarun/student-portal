@@ -57,7 +57,18 @@
             },
             {
               "name": "students",
-              "args": [],
+              "args": [
+                {
+                  "name": "ids",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                }
+              ],
               "type": {
                 "kind": "LIST",
                 "ofType": {
