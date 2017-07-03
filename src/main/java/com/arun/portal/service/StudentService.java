@@ -18,5 +18,5 @@ public interface StudentService {
 
     Student getStudentDetails(String firstName, String lastName);
 
-    Student getStudentById(Integer id);
+    Student getStudentById(String id);
 }

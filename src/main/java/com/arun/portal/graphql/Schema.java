@@ -58,7 +58,7 @@ public class Schema {
             studentService.getStudentById(environment.getArgument("id"));
 
     DataFetcher<Student> prefect = environment ->
-            studentService.getStudentById(1);
+            studentService.getStudentById("1");
 
 
     DataFetcher<List<Student>> studentsByGrade = environment ->
