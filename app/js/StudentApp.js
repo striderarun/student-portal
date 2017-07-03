@@ -1,20 +1,20 @@
+import {Link} from 'react-router';
+
 class StudentApp extends React.Component {
   render() {
-    var rows = [];
-    this.props.students.forEach((student) => {
-      rows.push(<tr><th colSpan="2">{student.firstName}</th>
-      <th colSpan="2">{student.lastName}</th></tr>);
-    });
     return (
-        <table>
-            <thead>
-              <tr>
-                <th colSpan="2">First Name</th>
-                <th colSpan="2">Last Name</th>
-              </tr>
-            </thead>
-            <tbody>{rows}</tbody>
-        </table>
+        <div>
+            <h1>Students</h1>
+            <ul>
+              {this.props.students.map(student =>
+                <li key={student.id}>
+                  <Link to={`/student/${student.id}`}>
+                    {student.firstName} {student.lastName}
+                  </Link>
+                </li>
+              )}
+            </ul>
+        </div>
     );
   }
 }
@@ -23,6 +23,7 @@ export default Relay.createContainer(StudentApp, {
   fragments: {
     students: () => Relay.QL`
       fragment on Student @relay(plural: true) {
+        id
         firstName
         lastName
       }
