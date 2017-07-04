@@ -1,6 +1,7 @@
 import 'babel/polyfill';
 import {Router, Route} from 'react-router';
 import BrowserHistory from 'react-router/lib/BrowserHistory';
+import StudentMain from './StudentMain';
 import StudentApp from './StudentApp';
 import StudentDetail from './StudentDetail';
 
@@ -49,8 +50,14 @@ React.render(
     createElement={createRelayContainer}>
     <Route>
       <Route
+          name="MainRoute"
+          path="/"
+          component={StudentMain}
+          queries={StudentList}
+        />
+      <Route
         name="StudentRoute"
-        path="/"
+        path="/student"
         component={StudentApp}
         queries={StudentList}
       />

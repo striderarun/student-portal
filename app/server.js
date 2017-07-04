@@ -38,6 +38,7 @@ var app = new WebpackDevServer(compiler, {
 });
 // Serve static resources
 app.use('/', express.static('public'));
+app.use('/student/', express.static('public'));
 app.use('/student/:id', express.static('public'));
 app.use('/node_modules', express.static('node_modules'));
 app.listen(APP_PORT, () => {
