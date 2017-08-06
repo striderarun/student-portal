@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/striderarun/school-portal.svg?branch=master)](https://travis-ci.org/striderarun/school-portal)
+
 # school-portal
 
 A web application for managing different activities in a school, such as onboarding a new student, view student reports and grades, teacher feedback etc.
