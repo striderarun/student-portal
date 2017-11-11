@@ -3,3 +3,4 @@ build/
 .gradle/
 app/node_modules/
 target/
+.settings/
